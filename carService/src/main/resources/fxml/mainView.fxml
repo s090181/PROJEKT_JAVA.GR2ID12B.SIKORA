@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MainViewController">
+    <left>
+        <ListView fx:id="carList" prefHeight="499.0" prefWidth="989.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+         </BorderPane.margin></ListView>
+    </left>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="161.0" prefWidth="350.0">
+               <children>
+                  <Label text="Sortowanie">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="cbSortType" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="cbSortValue" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <Button mnemonicParsing="false" onAction="#sort" text="Potwirdź">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="161.0" prefWidth="350.0">
+               <children>
+                  <Label text="Wyszukiwanie">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="cheBBrand" mnemonicParsing="false" prefWidth="100.0" text="Marka" />
+                        <TextField fx:id="tfBrand" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="37.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="cheBModel" mnemonicParsing="false" prefWidth="100.0" text="Model" />
+                        <TextField fx:id="tfModel" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="127.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="cheBManufactureYear" mnemonicParsing="false" prefWidth="100.0" text="Rok produkcji" />
+                        <TextField fx:id="tfManufactureYear" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="137.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="cheBMileage" mnemonicParsing="false" prefWidth="100.0" text="Przebieg" />
+                        <TextField fx:id="tfMileage" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="145.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="cheBPrice" mnemonicParsing="false" prefWidth="100.0" text="Cena" />
+                        <TextField fx:id="tfPrice" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="146.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="cheBGearbox" mnemonicParsing="false" prefWidth="100.0" text="Skrzynia" />
+                        <TextField fx:id="tfGearbox" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="162.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="cheBFuel" mnemonicParsing="false" prefWidth="100.0" text="Paliwo" />
+                        <ChoiceBox fx:id="cbFuel" prefWidth="150.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#search" text="Potwierdź">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+              <VBox alignment="CENTER" prefHeight="800.0" prefWidth="350.0">
+                  <children>
+                      <Button mnemonicParsing="false" onAction="#newCar" prefWidth="150.0" text="Nowy">
+                          <font>
+                              <Font size="18.0" />
+                          </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                      </Button>
+                  <Button layoutX="67.0" layoutY="391.0" mnemonicParsing="false" onAction="#editCar" prefWidth="150.0" text="Edytuj">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="68.0" layoutY="420.0" mnemonicParsing="false" onAction="#removeCar" prefWidth="150.0" text="Usuń">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="51.0" layoutY="445.0" mnemonicParsing="false" onAction="#sell" prefWidth="150.0" text="Sprzedaj">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="84.0" layoutY="464.0" mnemonicParsing="false" onAction="#sold" prefWidth="150.0" text="Sprzedane ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  </children>
+              </VBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
